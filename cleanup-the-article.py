@@ -23,7 +23,7 @@ articles_dir = "/articles-to-process"
 # Iterate through each file in the directory
 for filename in os.listdir(articles_dir):
     # Construct the full path to the file
-    def cleanup_content(content):
+    def cleanup_content_bleeping_computer(content):
         # Add your cleanup logic here
         # keep only the content in the <div class="articleBody"> tag
         
@@ -46,19 +46,6 @@ for filename in os.listdir(articles_dir):
 
     file_path = os.path.join(articles_dir, filename)
 
-    # Check if the file is a regular file
-    if os.path.isfile(file_path):
-        # Read the content of the file
-        with open(file_path, 'r') as file:
-            content = file.read()
-
-        # Clean up the content
-        cleaned_content = cleanup_content(content)
-
-        # Write the cleaned up content back to the file
-        with open(file_path, 'w') as file:
-            file.write(cleaned_content)
-
     # move the file to the ../articles-processed directory
     # ...
 
@@ -69,7 +56,8 @@ for filename in os.listdir(articles_dir):
             content = file.read()
 
         # Clean up the content
-        cleaned_content = cleanup_content(content)
+        if feedName == "BleepingComputer":
+            cleaned_content = cleanup_content_bleeping_computer(content)
 
         # Write the cleaned up content back to the file
         with open(file_path, 'w') as file:
