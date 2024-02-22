@@ -34,9 +34,8 @@ file_name = f"{feedName}-{formatted_datetime}.txt"
 # Open the file with the created file name in write mode and store the file object in the variable feedFile
 feedFile = open(file_name, "w")
 
-# Write the feedContent to the file
-# Write the feedContent to the file using the write method of the file object feedFile
-feedFile.write(feedContent)
+# Decode the feedContent from bytes to string using utf-8 encoding before writing to the file
+feedFile.write(feedContent.decode('utf-8'))
 
 # Close the file
 # Close the file using the close method of the file object feedFile
