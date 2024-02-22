@@ -17,6 +17,6 @@ feedName = sys.argv[1]
 feedURL = sys.argv[2]
 
 # Call the pull-feed.py script with the feedName and feedURL as the arguments
-subprocess.call(["python", "pull-feed.py", feedName, feedURL])
+subprocess.call(["python3", "pull-feed.py", feedName, feedURL])
 
 # Call the generate-summary-from-rss-feed.py script with the feedName as the argument
