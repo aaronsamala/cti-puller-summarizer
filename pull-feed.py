@@ -62,6 +62,10 @@ feedXML = ET.fromstring(feedContent)
 # Extract the title, pubDate, dc:creator, link and description from the feedXML
 # Extract the title, pubDate, dc:creator, link and description from the feedXML
 
+# Loop through each item in the feedXML and extract the title, pubDate, dc:creator, link and description
+# Create an array of the items in the feedXML
+
+
 for item in feedXML.findall('.//item'):
     title = item.find('title').text
     pubDate = item.find('pubDate').text
@@ -74,10 +78,24 @@ for item in feedXML.findall('.//item'):
     print(f"Link: {link}")
     print(f"Description: {description}")
     print("\n")
+    # scrape the link and extract the content
+    response= requests.get(link, headers=headers)
+    # store the content in a file; the file name will be the title of the article (replace spaces with hyphens)
+    # Replace spaces in the title with hyphens
+    file_name = title.replace(" ", "-")
 
-# call generate-summary-from-rss-feed.py with the file_name as the argument
-# This will call the generate-summary-from-rss-feed.py file with the file_name as the argument
+    # Open the file with the created file name in write mode and store the file object in the variable articleFile
+    articleFile = open(file_name, "w")
 
+    # Decode the content from bytes to string using utf-8 encoding before writing to the file
+    articleFile.write(response.content.decode('utf-8'))
+
+    # Close the file
+    articleFile.close()
+
+    # Move the file to the articles-to-be-processed folder
+    # Call the move command to move the file to the articles-to-be-processed folder
+    subprocess.call(["mv", file_name, "articles-to-be-processed"])
 
 # Call the generate-summary-from-rss-feed.py script with the file_name as the argument
 #subprocess.call(["python3", "generate-summary-from-rss-feed.py", file_name])
