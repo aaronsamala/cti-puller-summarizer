@@ -4,6 +4,7 @@
 import sys
 import datetime
 import requests
+import subprocess
 
 # feedName will be the first argument from the command line
 feedName = sys.argv[1]
@@ -45,4 +46,11 @@ feedFile.close()
 # Print a message to the user indicating that the feed has been pulled and stored in the file
 
 print(f"The feed has been pulled and stored in the file {file_name}.")
+
+# call generate-summary-from-rss-feed.py with the file_name as the argument
+# This will call the generate-summary-from-rss-feed.py file with the file_name as the argument
+
+
+# Call the generate-summary-from-rss-feed.py script with the file_name as the argument
+subprocess.call(["python", "generate-summary-from-rss-feed.py", file_name])
 
