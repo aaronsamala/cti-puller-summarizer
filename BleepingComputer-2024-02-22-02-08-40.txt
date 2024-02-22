@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+        xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        >
+
+<channel>
+        <title>BleepingComputer</title>
+
+        <link>https://www.bleepingcomputer.com/</link>
+        <description>BleepingComputer - All Stories</description>
+        <pubDate>Thu, 22 Feb 2024 07:07:32 EST</pubDate>
+        <generator>https://www.bleepingcomputer.com/</generator>
+        <language>en</language>
+        <atom:link href="https://www.bleepingcomputer.com/feed/" rel="self" type="application/rss+xml" />
+	
+ <item>
+        <title>Joomla fixes XSS flaws that could expose sites to RCE attacks</title>
+        <link>https://www.bleepingcomputer.com/news/security/joomla-fixes-xss-flaws-that-could-expose-sites-to-rce-attacks/</link>
+        <pubDate>Wed, 21 Feb 2024 17:55:46 -0500</pubDate>
+        <dc:creator>Bill Toulas</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/joomla-fixes-xss-flaws-that-could-expose-sites-to-rce-attacks/</guid>
+	<description><![CDATA[Five vulnerabilities have been discovered in the Joomla content management system that could be leveraged to execute arbitrary code on vulnerable websites. [...]]]></description>
+ </item>
+
+ <item>
+        <title>Microsoft expands free logging capabilities after May breach</title>
+        <link>https://www.bleepingcomputer.com/news/security/microsoft-expands-free-logging-capabilities-after-may-breach/</link>
+        <pubDate>Wed, 21 Feb 2024 17:31:33 -0500</pubDate>
+        <dc:creator>Sergiu Gatlan</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/microsoft-expands-free-logging-capabilities-after-may-breach/</guid>
+	<description><![CDATA[Microsoft has expanded free logging capabilities for all Purview Audit standard customers, including U.S. federal agencies, six months after disclosing that Chinese hackers stole U.S. government emails undetected in an Exchange Online breach between May and June 2023. [...]]]></description>
+ </item>
+
+ <item>
+        <title>Hackers abuse Google Cloud Run in massive banking trojan campaign</title>
+        <link>https://www.bleepingcomputer.com/news/security/hackers-abuse-google-cloud-run-in-massive-banking-trojan-campaign/</link>
+        <pubDate>Wed, 21 Feb 2024 16:07:36 -0500</pubDate>
+        <dc:creator>Bill Toulas</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+        <category><![CDATA[Cloud]]></category>
+
+        <category><![CDATA[Google]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/hackers-abuse-google-cloud-run-in-massive-banking-trojan-campaign/</guid>
+	<description><![CDATA[Security researchers are warning of hackers abusing the Google Cloud Run service to distribute massive volumes of banking trojans like Astaroth, Mekotio, and Ousaban. [...]]]></description>
+ </item>
+
+ <item>
+        <title>Fraudsters tried to scam Apple out of 5,000 iPhones worth over $3 million</title>
+        <link>https://www.bleepingcomputer.com/news/security/fraudsters-tried-to-scam-apple-out-of-5-000-iphones-worth-over-3-million/</link>
+        <pubDate>Wed, 21 Feb 2024 15:27:22 -0500</pubDate>
+        <dc:creator>Sergiu Gatlan</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/fraudsters-tried-to-scam-apple-out-of-5-000-iphones-worth-over-3-million/</guid>
+	<description><![CDATA[Two Chinese nationals face 20 years in prison after being caught and convicted of submitting over 5,000 fake iPhones worth more than $3 million to Apple with the goal of having them replaced with genuine devices. [...]]]></description>
+ </item>
+
+ <item>
+        <title>New SSH-Snake malware steals SSH keys to spread across the network</title>
+        <link>https://www.bleepingcomputer.com/news/security/new-ssh-snake-malware-steals-ssh-keys-to-spread-across-the-network/</link>
+        <pubDate>Wed, 21 Feb 2024 14:03:25 -0500</pubDate>
+        <dc:creator>Bill Toulas</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/new-ssh-snake-malware-steals-ssh-keys-to-spread-across-the-network/</guid>
+	<description><![CDATA[A threat actor is using an open-source network mapping tool named SSH-Snake to look for private keys undetected and move laterally on the victim infrastructure. [...]]]></description>
+ </item>
+
+ <item>
+        <title>US govt shares cyberattack defense tips for water utilities</title>
+        <link>https://www.bleepingcomputer.com/news/security/us-govt-shares-cyberattack-defense-tips-for-water-utilities/</link>
+        <pubDate>Wed, 21 Feb 2024 13:39:17 -0500</pubDate>
+        <dc:creator>Sergiu Gatlan</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/us-govt-shares-cyberattack-defense-tips-for-water-utilities/</guid>
+	<description><![CDATA[CISA, the FBI, and the Environmental Protection Agency (EPA) shared a list of defense measures U.S. water utilities should implement to better defend their systems against cyberattacks [...]]]></description>
+ </item>
+
+ <item>
+        <title>ScreenConnect critical bug now under attack as exploit code emerges</title>
+        <link>https://www.bleepingcomputer.com/news/security/screenconnect-critical-bug-now-under-attack-as-exploit-code-emerges/</link>
+        <pubDate>Wed, 21 Feb 2024 12:18:14 -0500</pubDate>
+        <dc:creator>Bill Toulas</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/screenconnect-critical-bug-now-under-attack-as-exploit-code-emerges/</guid>
+	<description><![CDATA[Both technical details and proof-of-concept exploits are available for the two vulnerabilities ConnectWise disclosed earlier this week for ScreenConnect, its remote desktop and access software. [...]]]></description>
+ </item>
+
+ <item>
+        <title>US offers $15 million bounty for info on LockBit ransomware gang</title>
+        <link>https://www.bleepingcomputer.com/news/security/us-offers-15-million-bounty-for-info-on-lockbit-ransomware-gang/</link>
+        <pubDate>Wed, 21 Feb 2024 11:22:09 -0500</pubDate>
+        <dc:creator>Sergiu Gatlan</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/us-offers-15-million-bounty-for-info-on-lockbit-ransomware-gang/</guid>
+	<description><![CDATA[The U.S. State Department is now also offering rewards of up to $15 million to anyone who can provide information about LockBit ransomware gang members and their associates. [...]]]></description>
+ </item>
+
+ <item>
+        <title>VMware urges admins to remove deprecated, vulnerable auth plug-in</title>
+        <link>https://www.bleepingcomputer.com/news/security/vmware-urges-admins-to-remove-deprecated-vulnerable-auth-plug-in/</link>
+        <pubDate>Tue, 20 Feb 2024 16:00:16 -0500</pubDate>
+        <dc:creator>Sergiu Gatlan</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/vmware-urges-admins-to-remove-deprecated-vulnerable-auth-plug-in/</guid>
+	<description><![CDATA[VMware urged admins today to remove a discontinued authentication plugin exposed to authentication relay and session hijack attacks in Windows domain environments via two security vulnerabilities left unpatched. [...]]]></description>
+ </item>
+
+ <item>
+        <title>VoltSchemer attacks use wireless chargers to inject voice commands, fry phones</title>
+        <link>https://www.bleepingcomputer.com/news/security/voltschemer-attacks-use-wireless-chargers-to-inject-voice-commands-fry-phones/</link>
+        <pubDate>Tue, 20 Feb 2024 15:38:46 -0500</pubDate>
+        <dc:creator>Bill Toulas</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+        <category><![CDATA[Mobile]]></category>
+
+        <category><![CDATA[Technology]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/voltschemer-attacks-use-wireless-chargers-to-inject-voice-commands-fry-phones/</guid>
+	<description><![CDATA[A team of academic researchers show that a new set of attacks called 'VoltSchemer' can inject voice commands to manipulate a smartphone's voice assistant through the magnetic field emitted by an off-the-shelf wireless charger. [...]]]></description>
+ </item>
+
+ <item>
+        <title>New Migo malware disables protection features on Redis servers</title>
+        <link>https://www.bleepingcomputer.com/news/security/new-migo-malware-disables-protection-features-on-redis-servers/</link>
+        <pubDate>Tue, 20 Feb 2024 14:38:14 -0500</pubDate>
+        <dc:creator>Bill Toulas</dc:creator>
+
+        
+        <category><![CDATA[Security]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/security/new-migo-malware-disables-protection-features-on-redis-servers/</guid>
+	<description><![CDATA[Security researchers discovered a new campaign that targets Redis servers on Linux hosts using a piece of malware called 'Migo' to mine for cryptocurrency. [...]]]></description>
+ </item>
+
+ <item>
+        <title>Signal rolls out usernames that let you hide your phone number</title>
+        <link>https://www.bleepingcomputer.com/news/technology/signal-rolls-out-usernames-that-let-you-hide-your-phone-number/</link>
+        <pubDate>Tue, 20 Feb 2024 14:11:51 -0500</pubDate>
+        <dc:creator>Sergiu Gatlan</dc:creator>
+
+        
+        <category><![CDATA[Technology]]></category>
+
+        <category><![CDATA[Software]]></category>
+
+
+        <guid>https://www.bleepingcomputer.com/news/technology/signal-rolls-out-usernames-that-let-you-hide-your-phone-number/</guid>
+	<description><![CDATA[End-to-end encrypted messaging app Signal finally allows users to pick custom usernames to connect with others while protecting their phone number privacy. [...]]]></description>
+ </item>
+
+</channel>
+</rss>
