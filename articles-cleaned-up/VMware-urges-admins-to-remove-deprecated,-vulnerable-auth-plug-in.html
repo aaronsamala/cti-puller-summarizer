@@ -1,0 +1,32 @@
+
+
+VMware urged admins today to remove a discontinued authentication plugin exposed to authentication relay and session hijack attacks in Windows domain environments via two security vulnerabilities left unpatched.
+The vulnerable VMware Enhanced Authentication Plug-in (EAP) enables seamless login to vSphere's management interfaces via integrated Windows Authentication and Windows-based smart card functionality on Windows client systems.
+VMware announced EAP's deprecation almost three years ago, in March 2021, with the release of vCenter Server 7.0 Update 2.
+Tracked as CVE-2024-22245 (9.6/10 CVSSv3 base score) and CVE-2024-22250 (7.8/10), the two security flaws patched today can be used by malicious attackers to relay Kerberos service tickets and take over privileged EAP sessions.
+"A malicious actor could trick a target domain user with EAP installed in their web browser into requesting and relaying service tickets for arbitrary Active Directory Service Principal Names (SPNs)," VMware explains when describing CVE-2024-22245 known attack vectors.
+"A malicious actor with unprivileged local access to a Windows operating system can hijack a privileged EAP session when initiated by a privileged domain user on the same system," the company added about CVE-2024-22250.
+The company added that it currently has no evidence that the security vulnerabilities have been targeted or exploited in the wild.
+How to secure vulnerable systems
+To address the CVE-2024-22245 and CVE-2024-22250 security flaws, admins have to remove both the in-browser plugin/client (VMware Enhanced Authentication Plug-in 6.7.0) and the ​​​​​​Windows service (VMware Plug-in Service).
+To uninstall them or disable the Windows service if removal isn't possible, you can run the following PowerShell commands (as advised here):
+
+Uninstall
+—————————
+(Get-WmiObject -Class Win32_Product | Where-Object{$_.Name.StartsWith("VMware Enhanced Authentication Plug-in")}).Uninstall()
+(Get-WmiObject -Class Win32_Product | Where-Object{$_.Name.StartsWith("VMware Plug-in Service")}).Uninstall()
+
+Stop/Disable service
+————————————————————
+Stop-Service -Name "CipMsgProxyService"
+Set-Service -Name "CipMsgProxyService" -StartupType "Disabled"
+
+Luckily, the deprecated VMware EAP is not installed by default and is not a part of VMware's vCenter Server, ESXi, or Cloud Foundation products.
+Admins have to manually install it on Windows workstations used for administration tasks to enable direct login when using the VMware vSphere Client through a web browser.
+As an alternative to this vulnerable auth plug-in, VMware advises admins to use other VMware vSphere 8 authentication methods such as Active Directory over LDAPS, Microsoft Active Directory Federation Services (ADFS), Okta, and Microsoft Entra ID (formerly Azure AD).
+Last month, VMware also confirmed that a critical vCenter Server remote code execution vulnerability (CVE-2023-34048) patched in October was under active exploitation.
+Mandiant revealed that the UNC3886 Chinese cyber espionage group abused it as a zero-day for more than two years, since at least late 2021.
+
+Related Articles:
+VMware confirms critical vCenter flaw now exploited in attacksJoomla fixes XSS flaws that could expose sites to RCE attacksScreenConnect critical bug now under attack as exploit code emergesUS government discloses more ransomware attacks on water plantsConnectWise urges ScreenConnect admins to patch critical RCE flaw
+

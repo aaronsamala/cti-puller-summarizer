@@ -1,0 +1,42 @@
+
+
+Security researchers are warning of hackers abusing the Google Cloud Run service to distribute massive volumes of banking trojans like Astaroth, Mekotio, and Ousaban.
+Google Cloud Run is lets users deploy frontend and backend services, websites or applications, handle workloads without the effort of managing an infrastructure or scaling.
+Cisco Talos researchers observed a massive uptick in the misuse of Google’s service for malware distribution starting September 2023, when Brazilian actors launched campaigns using MSI installer files to deploy malware payloads.
+The researchers' report notes that Google Cloud Run has become attractive to cybercriminals lately due to its cost-effectiveness and ability to bypass standard security blocks and filters.
+
+Volume of phishing emails linking to Google Cloud Run (Cisco)
+Attack chain
+The attacks start with phishing emails to potential victims, crafted to appear as legitimate communications for invoices, financial statements, or messages from local government and tax agencies.
+The researchers say that most emails in the campaign are in Spanish since they target countries in Latin America but there are also cases where the language used is Italian.
+
+Sample of phishing email used in the campaign (Cisco)
+The emails come with links that redirect to malicious web services hosted on Google Cloud Run.
+In some cases, the payload delivery is via MSI files. In other examples, the service issues a 302 redirect to a Google Cloud Storage location, where a ZIP archive with a malicious MSI file is stored.
+
+The malware distribution chain (Cisco)
+When the victim execute the malicious MSI files, new components and payloads are downloaded and executed on the system.
+In the observed cases, the second-stage payload delivery is done by abusing the legitimate Windows tool ‘BITSAdmin.’
+Finally, the malware establishes persistence on the victim’s system to survive reboots by adding LNK files (‘sysupdates.setup<random_string>.lnk’) in the Startup folder, configured to execute a PowerShell command that executes the infection script (‘AutoIT’).
+
+Astaroth's execution chain (Cisco)
+Malware details
+The campaigns abusing Google Cloud Run involve three banking trojans: Astaroth/Guildma, Mekotio, and Ousaban. Each is designed to infiltrate systems stealthily, establish persistence, and exfiltrate sensitive financial data that can be used for taking over banking accounts.
+Astaroth comes with advanced evasion techniques. It initially focused on Brazilian victims but now targets over 300 financial institutions across 15 countries in Latin America. Recently, the malware started to collect credentials for cryptocurrency exchange services.
+Employing keylogging, screen capture, and clipboard monitoring, Astaroth not only steals sensitive data but also intercepts and manipulates internet traffic to capture banking credentials.
+
+Banking institutes targeted by Astaroth (Cisco)
+Mekotio has also been active for several years and focuses on the Latin American region.
+It is known for stealing banking credentials, personal information, and performing fraudulent transactions. It can also manipulate web browsers to redirect users to phishing sites.
+Finally, Ousaban is a banking trojan capable of keylogging, capture screenshots, and phishing for banking credentials using fake (i.e. cloned) banking portals.
+Cisco Talos notes that Ousaban is delivered at a later stage of the Astaroth infection chain, indicating a potential collaboration between the operators of the two malware families or a single threat actor managing both.
+We have reached out to Google for details on what the company plans to do to counter this threat, and a spokesperson sent the following comment:
+
+We’re appreciative of the researcher’s work in identifying and reporting the use of Cloud Run to direct users to malicious content.
+We have removed the offending links and are looking into strengthening our mitigation efforts to help prevent this type of nefarious activity.
+
+Update 2/22 - Added Google comment
+
+Related Articles:
+Anatsa Android malware downloaded 150,000 times via Google PlayNew ‘Gold Pickaxe’ Android, iOS malware steals your face for fraudNew Qbot malware variant uses fake Adobe installer popup for evasionOngoing Microsoft Azure account hijacking campaign targets executivesMicrosoft Teams phishing pushes DarkGate malware via group chats
+

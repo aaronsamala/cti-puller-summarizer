@@ -8,9 +8,12 @@ import os
 import subprocess
 import re
 import shutil
+from bs4 import BeautifulSoup
 
 # Get the feedName from the command line arguments
 feedName = sys.argv[1]
+# print the feedName
+print(feedName)
 
 # iterate through each file in the articles-to-process directory
 # for each file, read the content and clean it up
@@ -18,7 +21,7 @@ feedName = sys.argv[1]
 # use the os module to list the files in the articles-to-process directory
 
 # Get the path to the articles-to-process directory
-articles_dir = "/articles-to-process"
+articles_dir = "./articles-to-be-processed"
 
 # Iterate through each file in the directory
 for filename in os.listdir(articles_dir):
@@ -29,20 +32,14 @@ for filename in os.listdir(articles_dir):
         
 
         # Use regular expressions to extract the content within the <div class="articleBody"> tag
-        pattern = r'<div class="articleBody">(.*?)</div>'
-        match = re.search(pattern, content, re.DOTALL)
+        soup = BeautifulSoup(content, 'html.parser')
+        article_body = soup.find('div', {'class': 'articleBody'})
 
-        # Check if a match is found
-        if match:
-            # Get the content within the <div class="articleBody"> tag
-            cleaned_content = match.group(1)
+        if article_body is not None:
+            article_content = article_body.text
         else:
-            # If no match is found, set cleaned_content to an empty string
-            cleaned_content = ""
-
-        # Remove any remaining HTML tags from the cleaned content
-        cleaned_content = re.sub(r'<.*?>', '', cleaned_content)
-        pass
+            print("No div with class 'articleBody' found")
+        return article_content
 
     file_path = os.path.join(articles_dir, filename)
 
@@ -56,17 +53,22 @@ for filename in os.listdir(articles_dir):
             content = file.read()
 
         # Clean up the content
+        cleaned_content = content
         if feedName == "BleepingComputer":
             cleaned_content = cleanup_content_bleeping_computer(content)
 
         # Write the cleaned up content back to the file
         with open(file_path, 'w') as file:
-            file.write(cleaned_content)
+            if cleaned_content is not None:
+                file.write(cleaned_content)
+                processed_dir = "./articles-cleaned-up"
+                processed_file_path = os.path.join(processed_dir, filename)
+                shutil.move(file_path, processed_file_path)
+            else:
+                print("Warning: cleaned_content is None; not moving nothing to the processed directory.")
 
         # Move the file to the ../articles-processed directory
-        processed_dir = "../articles-processed"
-        processed_file_path = os.path.join(processed_dir, filename)
-        shutil.move(file_path, processed_file_path)
+        
 
 
 

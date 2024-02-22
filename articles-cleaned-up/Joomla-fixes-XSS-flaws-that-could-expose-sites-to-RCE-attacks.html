@@ -1,0 +1,22 @@
+
+
+Five vulnerabilities have been discovered in the Joomla content management system that could be leveraged to execute arbitrary code on vulnerable websites.
+The vendor has addressed the security issues, which impact multiple versions of Joomla, and fixes are present in versions 5.0.3 and also 4.4.3 of the CMS.
+CVE-2024-21722: The MFA management features did not properly termine existing user sessions when a user's MFA methods have been modified.
+CVE-2024-21723: Inadequate parsing of URLs could result into an open redirect.
+CVE-2024-21724: Inadequate input validation for media selection fields lead to cross-site scripting (XSS) vulnerabilities in various extensions.
+CVE-2024-21725: Inadequate escaping of mail addresses lead to XSS vulnerabilities in various components
+CVE-2024-21726: Inadequate content filtering within the filter code leading to multiple XSS
+Joomla's advisory notes that CVE-2024-21725 is the vulnerability with the highest severity risk and has a high exploitation probability.
+Remote code execution risk
+Another issue, an XSS tracked as CVE-2024-21726, affects Joomla’s core filter component. It has a moderate severity and exploitation probability but Stefan Schiller, a vulnerability researcher at code inspection tools provider Sonar, warns that it could be leveraged to achieve remote code execution.
+“Attackers can leverage the issue to gain remote code execution by tricking an administrator into clicking on a malicious link,” said Schiller.
+XSS flaws can allow attackers to inject malicious scripts into content served to other users, typically enabling the execution of unsafe code through the victim's browser.
+Exploiting the issue requires user interaction. An attacker would need to trick a user with administrator privileges to click on a malicious link.
+Although the user interaction lowers the severity of the vulnerability, attackers are clever enough to come up with proper lures. Alternatively, they can launch so-called "spray-and-pray" attacks, where a larger audience is exposed to the malicious links with the hope that some users would click them.
+Sonar did not share any technical details about the flaw and how it can be exploited, to allow a larger number of Joomla admins to apply the available security updates.
+"While we won't be disclosing technical details at this time, we want to emphasize the importance of prompt action to mitigate this risk," Schiller says in the alert, stressing that all Joomla users should update to the latest version.
+
+Related Articles:
+Over 150k WordPress sites at takeover risk via vulnerable pluginScreenConnect critical bug now under attack as exploit code emergesHackers exploit critical RCE flaw in Bricks WordPress site builderSolarWinds fixes critical RCE bugs in access rights audit solutionFortinet warns of new FortiSIEM RCE bugs in confusing disclosure
+

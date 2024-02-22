@@ -82,10 +82,13 @@ for item in feedXML.findall('.//item'):
     response= requests.get(link, headers=headers)
     # store the content in a file; the file name will be the title of the article (replace spaces with hyphens)
     # Replace spaces in the title with hyphens
-    file_name = title.replace(" ", "-")
+    file_name = title.replace(" ", "-") + ".html"
 
-    # Open the file with the created file name in write mode and store the file object in the variable articleFile
-    articleFile = open(file_name, "w")
+    # Create the file path for the "articles-to-be-processed" folder
+    folder_path = "articles-to-be-processed/" + file_name
+
+    # Open the file with the created file path in write mode and store the file object in the variable articleFile
+    articleFile = open(folder_path, "w")
 
     # Decode the content from bytes to string using utf-8 encoding before writing to the file
     articleFile.write(response.content.decode('utf-8'))
@@ -93,9 +96,7 @@ for item in feedXML.findall('.//item'):
     # Close the file
     articleFile.close()
 
-    # Move the file to the articles-to-be-processed folder
-    # Call the move command to move the file to the articles-to-be-processed folder
-    subprocess.call(["mv", file_name, "articles-to-be-processed"])
+
 
 # Call the generate-summary-from-rss-feed.py script with the file_name as the argument
 #subprocess.call(["python3", "generate-summary-from-rss-feed.py", file_name])
