@@ -51,5 +51,5 @@ print(f"The feed has been pulled and stored in the file {file_name}.")
 
 
 # Call the generate-summary-from-rss-feed.py script with the file_name as the argument
-subprocess.call(["python", "generate-summary-from-rss-feed.py", file_name])
+subprocess.call(["python3", "generate-summary-from-rss-feed.py", file_name])
 
