@@ -5,6 +5,9 @@ import sys
 import datetime
 import requests
 import subprocess
+import xml.etree.ElementTree as ET
+
+# create a testing boolean to test the script
 
 # feedName will be the first argument from the command line
 feedName = sys.argv[1]
@@ -49,10 +52,33 @@ feedFile.close()
 
 print(f"The feed has been pulled and stored in the file {file_name}.")
 
+# the feed format schema can be viewed in BleepingComputer-2024-02-22-00-08-32.txt
+# parse the feed and extract the title, pubDate, dc:creator, link and description
+
+feedXML = ET.fromstring(feedContent)
+# Do something with the extracted data
+# For example, print the extracted data
+# Extract the title, pubDate, dc:creator, link and description from the feedXML
+# Extract the title, pubDate, dc:creator, link and description from the feedXML
+# Extract the title, pubDate, dc:creator, link and description from the feedXML
+
+for item in feedXML.findall('.//item'):
+    title = item.find('title').text
+    pubDate = item.find('pubDate').text
+    creator = item.find('{http://purl.org/dc/elements/1.1/}creator').text
+    link = item.find('link').text
+    description = item.find('description').text
+    print(f"Title: {title}")
+    print(f"PubDate: {pubDate}")
+    print(f"Creator: {creator}")
+    print(f"Link: {link}")
+    print(f"Description: {description}")
+    print("\n")
+
 # call generate-summary-from-rss-feed.py with the file_name as the argument
 # This will call the generate-summary-from-rss-feed.py file with the file_name as the argument
 
 
 # Call the generate-summary-from-rss-feed.py script with the file_name as the argument
-subprocess.call(["python3", "generate-summary-from-rss-feed.py", file_name])
+#subprocess.call(["python3", "generate-summary-from-rss-feed.py", file_name])
 
